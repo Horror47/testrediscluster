@@ -31,7 +31,7 @@ public class RedisConfig {
 //                "39.107.111.245:6386"
 //        ));
         // 自适应集群变化
-        return new JedisConnectionFactory(redisClusterConfiguration);
+        return new LettuceConnectionFactory(redisClusterConfiguration);
     }
 
 
@@ -41,7 +41,7 @@ public class RedisConfig {
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         // 配置redisTemplate
-        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<String, Object>();
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
         redisTemplate.afterPropertiesSet();
         return redisTemplate;

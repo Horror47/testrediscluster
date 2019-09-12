@@ -21,14 +21,14 @@ public class TestredisclusterApplicationTests {
 	@Autowired
 	private RedisTemplate redisTemplate;
 
-	@Test
-	public void cluster(){
-		log.info("准备存入");
-		redisTemplate.opsForValue().set("cluster","aa");
-
-		log.info("存入");
-		String a = (String) redisTemplate.opsForValue().get("cluster");
-		log.info("获取:"+a);
-
-	}
+//	@Test
+//	public void cluster(){
+//		log.info("准备存入");
+//		redisTemplate.opsForValue().set("cluster","aa");
+//
+//		log.info("存入");
+//		String a = (String) redisTemplate.opsForValue().get("cluster");
+//		log.info("获取:"+a);
+//
+//	}
 }
